@@ -25,3 +25,15 @@ class Person {
     return data;
   }
 }
+
+type bookType = {
+  title: string;
+  rating: number;
+};
+
+const filterByRating = (books: bookType[]) => {
+  const result = books.filter(
+    (book: bookType) => book.rating >= 4 && book.rating < 5
+  );
+  return result;
+};
