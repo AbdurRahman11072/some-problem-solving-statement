@@ -6,12 +6,9 @@ Type aliases and interfaces are very similar, and in many cases you can
 choose freely between them.\
 However, the **key difference** is:
 
--   **Interfaces are extendable** --- they can be "re-opened" and new
-    properties can be added.
--   **Types cannot be re-opened** --- once created, they cannot be
-    extended in the same way.
+- Type aliases and interfaces are very similar, and in many cases you can choose between them freely. Almost all features of an interface are available in type, the key distinction is that a type cannot be re-opened to add new properties vs an interface which is always extendable
 
-------------------------------------------------------------------------
+---
 
 ## 2. Use of the **keyof** Keyword
 
@@ -20,7 +17,7 @@ keys**.
 
 ### Example:
 
-``` ts
+```ts
 type User = {
   id: number;
   name: string;
@@ -32,27 +29,23 @@ type UserKeys = keyof User; // "id" | "name"
 This is useful for extracting or constraining key names in a type-safe
 way.
 
-------------------------------------------------------------------------
+---
 
 ## 3. Difference Between **any**, **unknown**, and **never**
 
 ### **any**
 
--   Disables TypeScript type checking.
--   Use when you do not want a variable to cause type issues.
+- any type is a type used when you don't want unspected variable to casue issue. In stop the type safety.
 
 ### **unknown**
 
--   Safer version of `any`.
--   You must check its type before using it.
+- unkonw is a a javascript premitive value. In typescirpt we use unkown if the value is uninitialized.
 
 ### **never**
 
--   Represents a value that **never occurs**.
--   Used for functions that never return (e.g., throw errors) or
-    unreachable code.
+- Used for functions that never return.
 
-------------------------------------------------------------------------
+---
 
 ## 4. Use of **Enums** in TypeScript
 
@@ -60,25 +53,25 @@ Enums allow developers to define a set of named constants.
 
 ### **Numeric Enum**
 
-``` ts
+```ts
 enum Direction {
-  Up = 1,
+  Up,
   Down,
   Left,
-  Right
+  Right,
 }
 ```
 
 ### **String Enum**
 
-``` ts
+```ts
 enum Status {
   Success = "SUCCESS",
-  Failed = "FAILED"
+  Failed = "FAILED",
 }
 ```
 
-------------------------------------------------------------------------
+---
 
 ## 5. Union and Intersection Types
 
@@ -86,7 +79,7 @@ enum Status {
 
 Value can be **one of several types**.
 
-``` ts
+```ts
 let id: string | number;
 id = "abc123";
 id = 456;
@@ -96,24 +89,11 @@ id = 456;
 
 Value must satisfy **all combined types**.
 
-``` ts
+```ts
 type Person = { name: string } & { age: number };
 
 const person: Person = {
   name: "John",
-  age: 30
+  age: 30,
 };
 ```
-
-------------------------------------------------------------------------
-
-## 📄 Summary
-
-This README contains explanations and examples of: - Interfaces vs
-Types\
-- keyof usage\
-- any vs unknown vs never\
-- Enums (numeric & string)\
-- Union and intersection types
-
-All formatted for easy understanding and quick revision.
