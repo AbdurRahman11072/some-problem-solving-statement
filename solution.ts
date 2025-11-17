@@ -37,3 +37,15 @@ const filterByRating = (books: bookType[]) => {
   );
   return result;
 };
+
+interface userType {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+}
+
+const filterActiveUsers = (users: userType[]) => {
+  const result = users.filter((user: userType) => user.isActive);
+  return result;
+};
