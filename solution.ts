@@ -49,3 +49,15 @@ const filterActiveUsers = (users: userType[]) => {
   const result = users.filter((user: userType) => user.isActive);
   return result;
 };
+
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
+
+const printBookDetails = (myBook: Book) => {
+  const book = `Title: ${myBook.title}, Author: ${myBook.author}, Published: ${myBook.publishedYear}, Available: ${myBook.isAvailable}`;
+  console.log(book);
+};
