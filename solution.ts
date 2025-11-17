@@ -7,3 +7,7 @@ const formatValue = (value: string | number | boolean) => {
     return false;
   } else return true;
 };
+
+const getLength = (str: string | any[]) => {
+  return str.length;
+};
