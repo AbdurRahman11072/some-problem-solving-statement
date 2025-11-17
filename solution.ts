@@ -61,3 +61,10 @@ const printBookDetails = (myBook: Book) => {
   const book = `Title: ${myBook.title}, Author: ${myBook.author}, Published: ${myBook.publishedYear}, Available: ${myBook.isAvailable}`;
   console.log(book);
 };
+
+const getUniqueValues = (array1: number[], array2: number[]) => {
+  const NewArray = [...array1, ...array2];
+  const uniqueValue = new Set(NewArray);
+
+  return [...uniqueValue];
+};
