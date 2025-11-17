@@ -11,3 +11,17 @@ const formatValue = (value: string | number | boolean) => {
 const getLength = (str: string | any[]) => {
   return str.length;
 };
+
+class Person {
+  name: string;
+  age: number;
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  getDetails() {
+    const data = `'Name: ${this.name}, Age: ${this.age}'`;
+    return data;
+  }
+}
