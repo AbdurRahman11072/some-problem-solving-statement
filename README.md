@@ -6,7 +6,7 @@ Type aliases and interfaces are very similar, and in many cases you can
 choose freely between them.\
 However, the **key difference** is:
 
-- Type aliases and interfaces are very similar, and in many cases you can choose between them freely. Almost all features of an interface are available in type, the key distinction is that a type cannot be re-opened to add new properties vs an interface which is always extendable
+- Type aliases and interfaces are very similar, and in many cases you can choose between them freely. Almost all features of an interface are available in type, the key distinction is that a type cannot be re-opened to add new properties but an interface which is always extendable
 
 ---
 
@@ -14,6 +14,8 @@ However, the **key difference** is:
 
 The `keyof` operator takes an object type and produces a **union of its
 keys**.
+This is useful for extracting or constraining key names in a type-safe
+way.
 
 ### Example:
 
@@ -26,8 +28,7 @@ type User = {
 type UserKeys = keyof User; // "id" | "name"
 ```
 
-This is useful for extracting or constraining key names in a type-safe
-way.
+
 
 ---
 
