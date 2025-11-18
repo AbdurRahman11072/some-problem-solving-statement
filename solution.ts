@@ -85,6 +85,7 @@ const getUniqueValues = (
       newArr.push(arr2[i]);
     }
   }
+  return newArr;
 };
 
 type Product = {
